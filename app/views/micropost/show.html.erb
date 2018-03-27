@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="field">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>Image</th>
+          <td>
+            <div class="profile-image">
+              <% if @micropost.image? %>
+                <%= image_tag @micropost.image_url(:thumb) %>
+              <% end %>
+            </div> 
+          </td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>
+            <%= @micropost.status %>
+          </td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>
+            <%= @micropost.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>Title of this post</th>
+          <td><%= @micropost.title %></td>
+        </tr>
+        <tr>
+          <th>Content</th>
+          <td><%= simple_format(@micropost.content) %></td>
+        </tr>
+        <% if user_signed_in? %>
+        <tr>
+          <th>Links</th>
+          <td>
+            <%= link_to 'Edit', edit_micropost_path %> <br>
+            <%= link_to 'Back', root_path %> <br>
+            <%= link_to 'Delete', micropost_path(@micropost), method: :delete %> <br>
+            
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+}
+.field {
+  background-color: white;
+  padding: 15px 50px;
+}
+table tbody td {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+@media screen and ( max-width:479px )
+{
+  .field {
+    background-color: white;
+    padding: 15px 0px;
+  }
+}
+</style>

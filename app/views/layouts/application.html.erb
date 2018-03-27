@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donation for Cancer | Indian Cancer Society</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <%= render 'layouts/header' %>
+      <div id="wrap">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+  </body>
+</html>
+
+<style>
+html,
+body {
+  height: 100%;
+  font-family: Lato;
+  background-color: #f3f4f7;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+</style>

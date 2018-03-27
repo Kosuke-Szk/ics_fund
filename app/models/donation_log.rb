@@ -1,0 +1,2 @@
+class DonationLog < ApplicationRecord
+end

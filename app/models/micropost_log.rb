@@ -1,0 +1,2 @@
+class MicropostLog < ApplicationRecord
+end

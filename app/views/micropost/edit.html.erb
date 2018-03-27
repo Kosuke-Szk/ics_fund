@@ -1,0 +1,47 @@
+<div class="container">
+<%= form_for(@micropost, url: {action: 'update'}, :html => { :multipart => true }) do |f| %>
+  <% if @micropost.errors.any? %>
+    <h4>入力した内容にエラーが<%= @micropost.errors.count %>件あります</h4>
+    <ul>
+      <% @micropost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+    <div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>Image</th>
+              <td>
+                <%= f.file_field :image %>
+                <%= f.hidden_field :image_cache %>
+              </td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td>
+              <%= f.select :status, Micropost.statuses.keys.to_a, {} %>
+            </td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td><%= f.text_field :name, placeholder: "Fullname", class: 'form-control input-sm'  %></td>
+          </tr>
+          <tr>
+            <th>Title of this post</th>
+            <td><%= f.text_field :title, placeholder: "Title of this post", class: 'form-control input-sm'  %></td>
+          </tr>
+          <tr>
+            <th>Content</th>
+            <td><%= f.text_area :content, placeholder: "Content...", class: 'form-control input-sm', style: 'height: 500px;' %></td>
+          </tr>
+        </tbody>
+      </table>
+    <div style="text-align: center;">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+</div>
