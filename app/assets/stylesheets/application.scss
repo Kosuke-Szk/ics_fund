@@ -19,6 +19,14 @@
   margin-right: 20px;
 }
 
+@media screen and ( max-width:479px )
+{
+    .logo {
+      max-width: 40px;
+      margin-right: 20px;
+    }
+}
+
 .big_logo {
   max-width: 70px;
 }
@@ -31,6 +39,18 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.button1-sm {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 15px;
 }
 
 .button1:hover {
@@ -64,4 +84,49 @@
 table td, table th {
   display: block;
   width: 100%;
+}
+
+@media screen and ( max-width:479px )
+{
+.button1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 200px;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.button1:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button_blue {
+    background-color: #037EF3;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+.button_blue:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button_blue_sm {
+    background-color: #037EF3;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
 }

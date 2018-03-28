@@ -8,7 +8,9 @@
     <button type="button" class="button1"data-toggle="modal" data-target="#applauseModal">
       Applause now! (Free)
     </button>
-    <a href="http://www.indiancancersociety.org/how-you-can-help/donate.aspx" target="blank"><button class="button1">Contribute now</button></a>
+    <button type="button" class="button1"data-toggle="modal" data-target="#contributeModal">
+      Contribute now
+    </button>
   </div>
 
   <% if user_signed_in? %>
@@ -102,7 +104,6 @@
   </div>
 </div>
 
-
 <div class="modal fade" id="applauseModal" tabindex="-1" role="dialog" aria-labelledby="applauseModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -120,6 +121,35 @@
             <br>
             <%= submit_tag 'Applause', class: 'button_blue_sm' %>
           <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="contributeModal" tabindex="-1" role="dialog" aria-labelledby="contributeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contributeModalLabel">Check it</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          The donation system is in the HP of Indian Cancer Society. You are going to redirect to HP and find forms there. <br> <br>
+          In "Purpose of donation", please check <b>Cancer Treatment</b>. Then you can contribute to it. <br>
+          <div>
+            <%= image_tag 'donate-description.png', class: 'donate-description' %>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <a href="http://www.indiancancersociety.org/how-you-can-help/donate.aspx" target="blank"><button class="button1-sm">OK</button></a>
         </div>
       </div>
       <div class="modal-footer">
@@ -189,12 +219,42 @@
   width: 90%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   overflow: hidden;
   text-align: left;
   margin: 10px 0px;
 }
 .post-box-wrapper a {
   text-decoration: none;
+}
+.donate-description {
+  width: 100%;
+}
+
+@media screen and ( max-width:479px )
+{
+  .mail_title {
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    font-style: italic;
+    padding-top: 10px;
+  }
+  .bg {
+    background-image: url(<%= asset_path "home-background.jpg" %>);
+    min-height: 500px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .main_number {
+    font-size: 40px;
+    font-style: italic;
+  }
+  .main_data {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+  }
 }
 </style>

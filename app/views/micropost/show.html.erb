@@ -12,9 +12,13 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <%= @micropost.name %> <br>
-        <%= @micropost.status %> <br>
-        <a href="http://www.indiancancersociety.org/how-you-can-help/donate.aspx" target="blank"><button class="button1">Contribute now</button></a>
+        <div class="post-header-intro">
+          <%= @micropost.name %> <br>
+          <%= @micropost.status %> <br>
+        </div>
+        <div class="post-contribute-btn">
+          <a href="http://www.indiancancersociety.org/how-you-can-help/donate.aspx" target="blank"><button class="button1">Contribute now</button></a>
+        </div>
       </div>
     </div>
     <div class="row content">
@@ -65,7 +69,15 @@ table tbody td {
 {
   .field {
     background-color: white;
-    padding: 15px 0px;
+    padding: 10px 7px;
+  }
+  .post-contribute-btn {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .post-header-intro {
+    text-align: center;
+    margin-top: 10px;
   }
 }
 </style>
