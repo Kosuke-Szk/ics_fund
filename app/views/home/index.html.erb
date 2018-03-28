@@ -115,11 +115,18 @@
       </div>
       <div class="modal-body">
         <div class="form-group">
+          <div>
+            <h6>What's Applause ?</h6>
+            <span>You can express your feelings of support for free by applauses.</span> <br>
+            <span>You can also attach a message to it.</span> <br>
+            <span>Patients can see it.</span>
+          </div>
           <%= form_tag(applause_create_path, method: :post) do %> 
-            <label>Comment:</label>
             <textarea name="comment" class="form-control" placeholder="Let's cheer!"></textarea>
             <br>
-            <%= submit_tag 'Applause', class: 'button_blue_sm' %>
+            <div align="center">
+              <%= submit_tag 'Applause', class: 'button_blue_sm' %>
+            </div>
           <% end %>
         </div>
       </div>
@@ -174,6 +181,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'lato';
 }
 
 .main_data {
@@ -219,7 +227,7 @@
   width: 90%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   overflow: hidden;
   text-align: left;
   margin: 10px 0px;

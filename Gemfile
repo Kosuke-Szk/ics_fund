@@ -59,3 +59,7 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
+
+# Markdown install
+gem 'qiita-markdown'
+gem 'github-linguist'

@@ -13,7 +13,6 @@
  */
  @import "bootstrap";
 
-
 .logo {
   max-width: 55px;
   margin-right: 20px;
@@ -22,7 +21,7 @@
 @media screen and ( max-width:479px )
 {
     .logo {
-      max-width: 40px;
+      max-width: 35px;
       margin-right: 20px;
     }
 }
@@ -123,10 +122,10 @@ table td, table th {
     background-color: #037EF3;
     border: none;
     color: white;
-    padding: 5px 5px;
+    padding: 5px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
 }
 }
