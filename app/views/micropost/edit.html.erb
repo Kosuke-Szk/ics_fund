@@ -35,7 +35,12 @@
           </tr>
           <tr>
             <th>Content</th>
-            <td><%= f.text_area :content, placeholder: "Content...", class: 'form-control input-sm', style: 'height: 500px;' %></td>
+              <td>
+                <div id='editor'>
+                  <%= f.text_area :content, placeholder: "Content...", class: 'form-control input-sm', style: 'height: 500px;' %>  
+                  </div>
+                </div>
+              </td>
           </tr>
         </tbody>
       </table>
