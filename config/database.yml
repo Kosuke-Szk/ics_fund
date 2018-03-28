@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: ics_fund_production
-  username: ics_fund
+  database: heroku_e8417f8f2cb6b68
+  username: b5625ba0f5c186
   password: <%= ENV['ICS_FUND_DATABASE_PASSWORD'] %>
