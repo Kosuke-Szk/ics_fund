@@ -21,18 +21,14 @@
   <% end %>
 
 </div>
+
+
+
 <div class="container">
-  <h4 class="subtitle">Patients' Stories</h4>
-  <span><%= link_to 'View all', micropost_index_path(status: 'treatment') %></span>
+  <h4 class="subtitle">Latest Stories</h4>
+  <span><%= link_to 'View all', micropost_index_path %></span>
   <div class="row" align="center">
-    <% @microposts_treatment.first(3).each do |micropost| %>
-      <%= render 'layouts/post-box', micropost: micropost %>
-    <% end %>
-  </div>
-  <h4 class="subtitle">Survivors' Stories</h4>
-  <span><%= link_to 'View all', micropost_index_path(status: 'suvivor') %></span>
-  <div class="row" align="center">
-    <% @microposts_survivor.first(3).each do |micropost| %>
+    <% @microposts.first(3).each do |micropost| %>
       <%= render 'layouts/post-box', micropost: micropost %>
     <% end %>
   </div>

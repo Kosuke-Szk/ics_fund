@@ -2,7 +2,11 @@ class MicropostController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update]
 
   def index
-    @microposts = Micropost.where(status: params[:status])
+    if params[:status]
+      @microposts = Micropost.where(status: params[:status])
+    else
+      @microposts = Micropost.all
+    end
   end
 
   def new
