@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
+  get 'redirect_to_donate', to: 'donation#create_log', as: 'redirect_to_donate'
 
   post 'applause', to: 'applause#create', as: 'applause_create'
   post 'donation', to: 'donation#add_donation', as: 'add_donation'
