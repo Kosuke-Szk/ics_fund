@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hk1od5hwk
+  api_key: '385166672713417'
+  api_secret: oLL_c5vEFF9rrNzndSzUk2eI_cM
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hk1od5hwk
+  api_key: '385166672713417'
+  api_secret: oLL_c5vEFF9rrNzndSzUk2eI_cM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hk1od5hwk
+  api_key: '385166672713417'
+  api_secret: oLL_c5vEFF9rrNzndSzUk2eI_cM
+  enhance_image_tag: true
+  static_image_support: false
