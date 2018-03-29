@@ -2,7 +2,9 @@
   <%= link_to micropost_path(micropost) do %>
     <div class="post-box">
       <div class="box-thumb">
-        <%= image_tag "profile/profile#{micropost.id}.jpeg" %>
+        <% if Rails.env == 'development' %>
+          <%= image_tag "profile/profile#{micropost.id}.jpeg" %>
+        <% end %>
         <% if micropost.image? %>
           <%= image_tag micropost.image_url(:thumb) %>
         <% end %>
