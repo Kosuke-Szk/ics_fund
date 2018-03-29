@@ -1,5 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
+  include Cloudinary::CarrierWave
   storage :file
   process convert: 'jpg'
   # 保存するディレクトリ名
@@ -18,4 +19,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   def filename
     "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
   end
+
+  def public_id
+    return model.id
+  end
+
 end

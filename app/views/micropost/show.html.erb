@@ -6,6 +6,7 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="profile-image" align="center">
+          
           <% if @micropost.image? %>
             <%= image_tag @micropost.image_url(:thumb) %>
           <% end %>

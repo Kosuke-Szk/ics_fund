@@ -63,3 +63,5 @@ gem 'rmagick', require: 'RMagick'
 # Markdown install
 gem 'qiita-markdown'
 gem 'github-linguist'
+
+gem 'cloudinary'
