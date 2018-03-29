@@ -3,7 +3,7 @@
     <h1 class="micropost-title">
       <%= @micropost.title %>
     </h1>
-    <%= social_share_button_tag(@micropost.title) %>
+    <%= social_share_button_tag(@micropost.title, desc: @micropost.content) %>
     <div class="row">
       <div class="col-sm-6">
         <div class="profile-image" align="center">
