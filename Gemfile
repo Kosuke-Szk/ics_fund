@@ -65,3 +65,5 @@ gem 'qiita-markdown'
 gem 'github-linguist'
 
 gem 'cloudinary'
+
+gem 'google-analytics-rails'
