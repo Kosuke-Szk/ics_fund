@@ -37,6 +37,10 @@
             <th>Content</th>
             <td><%= f.text_area :content, placeholder: "Content...", class: 'form-control input-sm', style: 'height: 500px;' %></td>
           </tr>
+          <tr>
+            <th>Plain content</th>
+            <td><%= f.text_area :plain_content, placeholder: "Do not use markdown. This is the plain text for some descriptions.", class: 'form-control input-sm', style: 'height: 500px;' %></td>
+          </tr>
         </tbody>
       </table>
     <div style="text-align: center;">

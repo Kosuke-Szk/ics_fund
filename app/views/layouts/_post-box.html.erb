@@ -1,6 +1,9 @@
 <div class="col-sm-4 post-box-wrapper">
   <%= link_to micropost_path(micropost) do %>
     <div class="post-box">
+      <div class="box-title">
+        <b><%= micropost.title %></b>
+      </div>
       <div class="box-thumb">
         <% if Rails.env == 'development' %>
           <%= image_tag "profile/profile#{micropost.id}.jpeg" %>
@@ -9,8 +12,8 @@
           <%= image_tag micropost.image_url(:thumb) %>
         <% end %>
       </div>
-      <div class="box-title">
-        <b><%= micropost.title %></b>
+      <div class="box-content">
+        <%= micropost.plain_content %>
       </div>
     </div>
   <% end %>
@@ -24,7 +27,7 @@
 
 .post-box {
   width: 90%;
-  height:280px;
+  height:400px;
   margin:5px;
   padding:10px;
   background-color:white;
@@ -57,7 +60,6 @@
   text-decoration: none;
 }
 .box-title {
-  margin-top: 15px;
   font-size: 20px;
   line-height: 1.2;
 }

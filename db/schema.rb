@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327090244) do
+ActiveRecord::Schema.define(version: 20180329091601) do
 
   create_table "applauses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "applause_num"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20180327090244) do
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
     t.string "image"
+    t.text "plain_content"
   end
 
   create_table "treatments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
