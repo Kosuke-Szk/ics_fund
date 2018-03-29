@@ -12,6 +12,7 @@
  *
  */
  @import "bootstrap";
+ @import "social-share-button";
 
  .code-frame {
 
@@ -93,6 +94,11 @@
 blockquote p {
   padding-left: 12px;
   border-left: solid 3px #DDDDDD;
+}
+
+h5 {
+  padding-left: 3px;
+  border-left: solid 3px #DDDDDD; 
 }
 
 .logo {

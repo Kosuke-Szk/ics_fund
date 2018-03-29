@@ -8,9 +8,7 @@
     <button type="button" class="button1"data-toggle="modal" data-target="#applauseModal">
       Applause now! (Free)
     </button>
-    <button type="button" class="button1"data-toggle="modal" data-target="#contributeModal">
-      Contribute now
-    </button>
+    <%= render 'layouts/contributebtn' %>
   </div>
 
   <% if user_signed_in? %>
@@ -28,46 +26,14 @@
   <span><%= link_to 'View all', micropost_index_path(status: 'treatment') %></span>
   <div class="row" align="center">
     <% @microposts_treatment.first(3).each do |micropost| %>
-      <div class="col-sm-4 post-box-wrapper">
-        <%= link_to micropost_path(micropost) do %>
-          <div class="post-box">
-            <div class="box-title">
-              <b><%= micropost.title %></b>
-            </div>
-            <div class="box-thumb">
-              <% if micropost.image? %>
-                <%= image_tag micropost.image_url(:thumb) %>
-              <% end %>
-            </div>
-            <div class="box-content">
-              <%= micropost.content %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <%= render 'layouts/post-box', micropost: micropost %>
     <% end %>
   </div>
   <h4 class="subtitle">Survivors' Stories</h4>
   <span><%= link_to 'View all', micropost_index_path(status: 'suvivor') %></span>
   <div class="row" align="center">
     <% @microposts_survivor.first(3).each do |micropost| %>
-      <div class="col-sm-4 post-box-wrapper">
-        <%= link_to micropost_path(micropost) do %>
-          <div class="post-box">
-            <div>
-              <%= micropost.title %>
-            </div>
-            <div class="box-thumb">
-              <% if micropost.image? %>
-                <%= image_tag micropost.image_url(:thumb) %>
-              <% end %>
-            </div>
-            <div class="box-content">
-              <%= micropost.content %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <%= render 'layouts/post-box', micropost: micropost %>
     <% end %>
   </div>
 </div>
@@ -204,7 +170,7 @@
 
 .post-box {
   width: 90%;
-  height:360px;
+  height:280px;
   margin:5px;
   padding:10px;
   background-color:white;
@@ -227,16 +193,19 @@
   width: 90%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 5 !important;
   overflow: hidden;
   text-align: left;
   margin: 10px 0px;
+  font-size: 14px !important;
 }
 .post-box-wrapper a {
   text-decoration: none;
 }
-.donate-description {
-  width: 100%;
+.box-title {
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 @media screen and ( max-width:479px )

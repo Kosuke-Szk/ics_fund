@@ -1,0 +1,62 @@
+<div class="col-sm-4 post-box-wrapper">
+  <%= link_to micropost_path(micropost) do %>
+    <div class="post-box">
+      <div class="box-thumb">
+        <%= image_tag "profile/profile#{micropost.id}.jpeg" %>
+        <% if micropost.image? %>
+          <%= image_tag micropost.image_url(:thumb) %>
+        <% end %>
+      </div>
+      <div class="box-title">
+        <b><%= micropost.title %></b>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<style>
+.post-box:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.post-box {
+  width: 90%;
+  height:280px;
+  margin:5px;
+  padding:10px;
+  background-color:white;
+  color: black;
+}
+
+.subtitle {
+  margin-top: 60px;
+  margin-bottom: 12px;
+}
+.box-thumb img {
+  margin-top: 5px;
+  height: 180px;
+  width: 90%;
+  object-fit: cover;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+}
+.box-content {
+  width: 90%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5 !important;
+  overflow: hidden;
+  text-align: left;
+  margin: 10px 0px;
+  font-size: 14px !important;
+}
+.post-box-wrapper a {
+  text-decoration: none;
+}
+.box-title {
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+</style>

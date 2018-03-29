@@ -65,3 +65,4 @@ gem 'qiita-markdown'
 gem 'github-linguist'
 
 gem 'cloudinary'
+gem 'social-share-button'
