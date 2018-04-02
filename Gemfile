@@ -66,3 +66,6 @@ gem 'github-linguist'
 
 gem 'cloudinary'
 gem 'social-share-button'
+
+gem 'hirb'
+gem 'hirb-unicode'

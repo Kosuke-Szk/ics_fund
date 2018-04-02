@@ -99,6 +99,10 @@ GEM
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     greenmat (3.2.2.3)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     html-pipeline (2.7.1)
       activesupport (>= 2)
       nokogiri (>= 1.4)
@@ -240,6 +244,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
+    unicode-display_width (0.1.1)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -265,6 +270,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   github-linguist
+  hirb
+  hirb-unicode
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
