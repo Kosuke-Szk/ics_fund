@@ -3,7 +3,9 @@
     <h1 class="micropost-title">
       <%= @micropost.title %>
     </h1>
-    <%= social_share_button_tag(@micropost.title, desc: @micropost.plain_content) %>
+    <div>
+      <b>Share</b><%= social_share_button_tag(@micropost.title, desc: @micropost.plain_content) %>
+    </div>
     <div class="row">
       <div class="col-sm-6">
         <div class="profile-image" align="center">
@@ -71,6 +73,11 @@
 table tbody td {
   max-width: 100%;
   word-wrap: break-word;
+}
+
+table td, table th {
+  display: block;
+  width: 100%;
 }
 .patient-name {
   font-size: 20px;

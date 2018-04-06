@@ -16,6 +16,8 @@ class MicropostController < ApplicationController
   def show
     @micropost = Micropost.find(params[:id])
     MicropostLog.create(micropost_id: @micropost.id)
+    # @issues = Issue.all
+    # @issue = Issue.new
   end
 
   def edit

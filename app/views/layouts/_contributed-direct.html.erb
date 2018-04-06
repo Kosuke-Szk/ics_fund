@@ -1,0 +1,44 @@
+<div align="center">
+  
+<form action="/purchase" method="POST" id="price500">
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_wCMDwGpNaYQL4u"
+
+    data-amount="<%= "#{@issues.find(1).price}" %>"
+    data-name="Contribute for patients"
+    data-description="You can contribute directry."
+
+    data-prefill.name="testname"
+    data-theme.color="#F37254"
+>
+</script>
+  <input type="hidden" value="<%= "#{@issues.find(1).id}" %>" name="product_id">
+</form>
+
+
+</div>
+
+<style>
+.razorpay-payment-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  min-width: 222px;
+}
+.razorpay-payment-button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+}
+</style>
+
+<script>
+  $('#price500 > .razorpay-payment-button:first').prop('value', 'Donate ₹500');
+  $('#price1000 > .razorpay-payment-button:first').prop('value', 'Donate ₹1000');
+  $('#price3000 > .razorpay-payment-button:first').prop('value', 'Donate ₹3000');
+  $('#price5000 > .razorpay-payment-button:first').prop('value', 'Donate ₹5000');
+</script>

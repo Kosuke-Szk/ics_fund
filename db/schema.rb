@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329091601) do
+ActiveRecord::Schema.define(version: 20180404063643) do
 
   create_table "applauses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "applause_num"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20180329091601) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "issues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "remote_ip"
+  end
+
   create_table "micropost_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "micropost_id", null: false
     t.datetime "created_at", null: false
@@ -46,6 +53,15 @@ ActiveRecord::Schema.define(version: 20180329091601) do
     t.integer "status", default: 0
     t.string "image"
     t.text "plain_content"
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "product_id"
+    t.integer "price"
+    t.string "status"
+    t.string "payment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "treatments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

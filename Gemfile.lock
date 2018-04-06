@@ -69,6 +69,7 @@ GEM
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -90,6 +91,10 @@ GEM
     escape_utils (1.2.1)
     execjs (2.7.0)
     ffi (1.9.23)
+    figaro (1.1.1)
+      thor (~> 0.14)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     gemoji (3.0.0)
     github-linguist (6.0.1)
       charlock_holmes (~> 0.7.5)
@@ -108,6 +113,8 @@ GEM
       nokogiri (>= 1.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -135,6 +142,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     mysql2 (0.4.10)
     netrc (0.11.0)
     nio4r (2.3.0)
@@ -144,6 +152,9 @@ GEM
       nokogiri
     orm_adapter (0.5.0)
     popper_js (1.12.9)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (3.0.2)
     puma (3.11.3)
     pygments.rb (1.2.1)
@@ -185,6 +196,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.1)
+    razorpay (2.2.0)
+      httparty (~> 0.14)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -217,6 +230,8 @@ GEM
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    simple_calendar (2.2.7)
+      rails (>= 3.0)
     social-share-button (1.1.0)
       coffee-rails
     spring (2.0.2)
@@ -269,6 +284,8 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   devise
+  figaro
+  font-awesome-rails
   github-linguist
   hirb
   hirb-unicode
@@ -276,12 +293,15 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.3.18, < 0.5)
+  pry
   puma (~> 3.7)
   qiita-markdown
   rails (~> 5.1.5)
+  razorpay
   rmagick
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_calendar (~> 2.0)
   social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)

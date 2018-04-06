@@ -13,4 +13,13 @@ Rails.application.routes.draw do
   post 'applause', to: 'applause#create', as: 'applause_create'
   post 'donation', to: 'donation#add_donation', as: 'add_donation'
   post 'treatment', to: 'treatment#add_treatment', as: 'add_treatment'
+  
+  post '/purchase' => 'orders#purchase_status'
+  get "refund/:id", to: "orders#refund"
+
+  get 'thankyou', to: 'home#thankyou', as: 'thankyou'
+  get 'confirmation', to: 'home#confirmation', as: 'confirmation'
+  get 'calendar', to: 'home#calendar', as: 'calendar'
+
+  resources :issue, only: [:create]
 end

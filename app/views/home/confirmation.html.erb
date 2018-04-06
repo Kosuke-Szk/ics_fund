@@ -1,0 +1,42 @@
+<div class="container" align="center">
+  <div class="confirmation-wrapper">
+    <div style="font-size: 20px;">Are you sure to donate Rs. <%= @issue.price %> ? </div>
+    <br>
+    <br>
+    <form action="/purchase" method="POST">
+    <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="rzp_test_wCMDwGpNaYQL4u"
+
+        data-amount="<%= "#{@issue.price * 100}" %>"
+        data-name="Contribute for patients"
+        data-description="You can contribute directry."
+
+        data-prefill.name="testname"
+        data-theme.color="#F37254"
+    >
+    </script>
+      <input type="hidden" value="<%= "#{@issue.id}" %>" name="product_id">
+    </form>
+  </div>
+</div>
+
+<style>
+.confirmation-wrapper {
+  padding-top: 30px;
+}
+.razorpay-payment-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  min-width: 222px;
+}
+.razorpay-payment-button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+}
+</style>
