@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     @microposts = Micropost.all.order('created_at DESC')
     @applause_num = Applause.all.count
     @donation_amount = Order.where(status: 'captured').sum(:price) / 100
+    @donation_count = (DonationLog.all.count / 2).floor
     @treatment_amount = Treatment.sum(:amount)
 
     @applause = Applause.new

@@ -19,7 +19,13 @@ Rails.application.routes.draw do
 
   get 'thankyou', to: 'home#thankyou', as: 'thankyou'
   get 'confirmation', to: 'home#confirmation', as: 'confirmation'
-  get 'calendar', to: 'home#calendar', as: 'calendar'
+  # get 'calendar', to: 'home#calendar', as: 'calendar'
 
   resources :issue, only: [:create]
+
+  get 'gift/:date', to: 'gift#show', as: 'gift_of'
+  post 'gift_order', to: 'gift#order', as: 'gift_order'
+
+  get 'admin_home', to: 'admin#home', as: 'admin_home'
+  get 'admin_status_update', to: 'admin#status_update', as: 'status_update'
 end

@@ -1,0 +1,98 @@
+<div class="container">
+  <div align="center">
+    <span>Contribute on <b><%= @gifts.first.date.strftime('%Y/%m/%d') %></b></span>
+    <form name="myform" action="/gift_order" method="post">
+    <table class="table">
+      <tbody>
+        <thead>
+          <tr>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td>Buy</td>
+          </tr>
+        </thead>
+        <% @gifts.each do |gift| %>
+        <tr>
+          <td><%= gift.substance.name %></td>
+          <td><%= gift.substance.price %></td>
+          <td><%= gift.substance.description %></td>
+          <td>
+            <% unless requested?(gift) %>
+              <input type="checkbox" onclick="calcurate()" value="<%= gift.substance.id %>" name='gift_ids[]'>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+        Total <input type="text" name="total" value="0">
+        <button type="button" class="btn btn-primary disabled" data-toggle="modal" data-target="#exampleModal" id="modal-btn" disabled="true">
+          Contribute now
+        </button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thank you for your contribution!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your donation total amount is Rs.<span id="confirm"></span>. <br>
+        You are going to redirect to the Indian Cancer Society HP for payment now. <br>
+        Please pay for correct amounts. After confirmation your donation, then we responsibly buy substances for patients and thier family. <br>
+        Thank you for your donation. <br>
+        <br>
+        Please fill your <b>name</b> above for confirmation.
+        <input type="text" name="name" id="name_field" required="true">
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" value="submit" class="btn btn-primary">
+      </div>
+    </div>
+  </div>
+</div>
+
+    </form>
+  </div>
+  
+</div>
+
+<script language="JavaScript">
+price=new Array();
+<% @gifts.each_with_index do |gift, index| %>
+  price[<%= index %>] = <%= gift.substance.price %>;
+<% end %>
+function calcurate(){
+  sum = 0;
+  for(i = 0; i <= <%= @gifts.length - 1 %>; i++){
+  if(document.myform.elements[i].checked==true){
+  sum = sum + price[i];
+  }
+  }
+  document.myform.total.value = sum;
+  $('#confirm').text(sum)
+  if (sum > 0) {
+    $("#modal-btn").removeClass('disabled');
+    $("#modal-btn").prop('disabled', false);
+  } else {
+    $("#modal-btn").addClass('disabled');
+    $("#modal-btn").prop('disabled', true); 
+  }
+}
+$('#name_field').change(function() {
+    console.log('変更されました！');
+});
+</script>
+
+<style type="text/css">
+  .table {
+    background: white;
+    font-size: 10px;
+  }
+</style>

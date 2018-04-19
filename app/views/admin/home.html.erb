@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <b>Current Requests</b>
+      <table class="table">
+        <tbody>
+          <thead>
+            <th>id</th>
+            <td>amount</td>
+            <td>Name</td>
+            <td>timestamp</td>
+          </thead>
+          <% @requests.each do |request| %>
+            <tr>
+              <th><%= request.id %></th>
+              <td><%= request.total %></td>
+              <td><%= request.name %></td>
+              <td><%= request.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+            </tr>
+          <% end %>    
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-8">
+      <b>Log</b>
+      <table class="table">
+        <tbody>
+          <thead>
+            <th>id</th>
+            <td>Gift</td>
+            <td>Day</td>
+            <td>Price</td>
+            <td>Request</td>
+            <td>Status</td>
+            <td>Change</td>
+          </thead>
+          <% @request_gift_log.each do |log| %>
+            <tr>
+              <th><%= log.id %></th>
+              <td><%= gift_name(log.gift_id) %></td>
+              <td><%= gift_date(log.gift_id).strftime('%Y/%m/%d') %></td>
+              <td>Rs.<%= gift_price(log.gift_id) %></td>
+              <td><%= log.request_id %></td>
+              <td>
+                <% if log.status == 0 %>
+                  Pending
+                <% elsif %>
+                  Done
+                <% end %>
+              </td>
+              <td><%= link_to 'Change', status_update_path(id: log.id) %></td>
+            </tr>
+          <% end %>    
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>

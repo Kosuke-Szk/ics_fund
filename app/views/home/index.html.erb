@@ -1,7 +1,9 @@
 <div class="bg">
-  <div class="mail_title">Save a Life</div>
-  <div class="main_data">₹. <span class="main_number"><%= @donation_amount.to_s(:delimited) %></span> raised</div>
-  <div class="main_data">We have created <span class="main_number"><%= @treatment_amount.to_s(:delimited) %></span> treatments</div>
+  <!-- <div class="mail_title">Why don't you save a life on your special day?</div> -->
+  <div class="mail_title">Save a life.</div>
+  <!-- <div class="main_data">₹. <span class="main_number"><%= @donation_amount.to_s(:delimited) %></span> raised</div> -->
+  <div class="main_data">₹. <span class="main_number"><%= @donation_count %></span> contributes now!</div>
+  <!-- <div class="main_data">We have created <span class="main_number"><%= @treatment_amount.to_s(:delimited) %></span> treatments</div> -->
   <div class="main_data"><span class="main_number"><%= @applause_num.to_s(:delimited) %></span> applauses now!</div>
   
   <div class="button-field">
@@ -11,6 +13,9 @@
   </div>
 
   <div class="button-field">
+<!--     <%= link_to '/calendar' do %>    
+    <button class="button1">See contribute calendar</button>
+    <% end %> -->
     <%= render 'layouts/contributebtn' %>
   </div>
   <% if user_signed_in? %>
@@ -22,6 +27,24 @@
     </div>
   <% end %>
 </div>
+
+<!-- <div class="home-donate-description" style="background: white;">
+  <div class="container">
+    <div align="center">
+      <h3><b>How to contribute?</b></h3>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <%= image_tag 'home_image1.jpeg',  style: 'width: 100%;' %>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag 'home_image2.jpeg',  style: 'width: 100%;' %>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div> -->
 
 <div class="container">
   <h4 class="subtitle">Latest Stories</h4>
@@ -129,11 +152,11 @@
 
 <style type="text/css">
 .mail_title {
-  font-size: 120px;
+  font-size: 60px;
   text-align: center;
   color: white;
   font-style: italic;
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 .bg {
@@ -169,17 +192,22 @@
   margin-bottom: 12px;
 }
 
+.home-donate-description {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
 @media screen and ( max-width:479px )
 {
   .mail_title {
-    font-size: 60px;
+    font-size: 30px;
     text-align: center;
     color: white;
     font-style: italic;
-    padding-top: 10px;
+    padding-top: 25px;
   }
   .bg {
-    background-image: url(<%= asset_path "home-background.jpg" %>);
+    background-image: url(<%= asset_path "home-background2.jpg" %>);
     min-height: 500px; 
     background-position: center;
     background-repeat: no-repeat;
